@@ -1,0 +1,4 @@
+resources/openai-logos/
+src/scripts/news_report/
+
+*.drawio
