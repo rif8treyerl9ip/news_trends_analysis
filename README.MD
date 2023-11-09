@@ -25,7 +25,7 @@
    ```
 2. 依存関係をインストールする:
    ```
-   cd news_trends_analysis
+   pip install ...
    ...
    ```
 
@@ -42,6 +42,15 @@
    ```
    run_scripts.bat
    ```
+
+実行が完了すると、Openai apiから生成されたメッセージが定刻に配信されます。ニュースはタイトル・URL・ニュースの要約のセットから成ります。
+
+### 配信例
+
+<p align="center">
+   <img src="C:/Users/thyt/Learning/Learning_py/news_trends_analysis/resources/Line_example.jpg" width="300">
+</p>
+
 
 ## ライセンス
 このプロジェクトは[MIT License](LICENSE)の下で公開されています。

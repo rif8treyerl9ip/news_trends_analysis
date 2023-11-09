@@ -51,6 +51,9 @@ import pandas as pd
 import openai
 from google.cloud import bigquery
 
+# Getting the current date and time
+current_date = datetime.now().strftime("%Y%m%d")
+
 def load_config(file_path):
     """ 指定されたファイルパスからJSONコンフィグを読み込む """
     with open(file_path, 'r') as file:
@@ -70,9 +73,6 @@ newsapi_config = load_config(newsapi_config_path)
 openai.api_key = openai_config.get('API_KEY')
 news_api_key = newsapi_config['API_KEY']
 
-current_date = datetime.now().strftime('%Y%m%d')
-print(current_date)
-
 
 # In[3]:
 
@@ -88,7 +88,7 @@ WITH RecentJapanTrends AS (
     SELECT *
     FROM `bigquery-public-data.google_trends.international_top_terms`
     WHERE
-        refresh_date = DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)
+        refresh_date = DATE_SUB(CURRENT_DATE(), INTERVAL 2 DAY)
         AND country_name = 'Japan'
 )
 SELECT 
@@ -118,7 +118,7 @@ for i, term in enumerate(top_10_terms, 1):
 # In[4]:
 
 # トレンドキーワードに関連する最新ニュースの要約と報告
-header_text = 'こんにちは！昨日の日本で話題になったGoogleトレンドキーワードの最新ニュースをお届けします。ご興味のある話題が見つかるかもしれませんね。\n\n'
+header_text = 'こんにちは！昨日話題になったトレンドのニュースをお届けします。興味のある話題が見つかるかもしれませんね。\n\n'
 
 index = 1  # インデックスの初期値を7に設定
 
