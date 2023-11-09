@@ -48,7 +48,7 @@
 ### 配信例
 
 <p align="center">
-   <img src="C:/Users/thyt/Learning/Learning_py/news_trends_analysis/resources/Line_example.jpg" width="300">
+   <img src="./resources/Line_example.jpg" width="300">
 </p>
 
 
